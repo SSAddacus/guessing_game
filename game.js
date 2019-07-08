@@ -1,5 +1,5 @@
 var guesspool = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]; 
-var wrongGuesses = [""];
+var wrongGuesses = [];
 var letterGuessed = "";
 var winCounter = 0;
 var lossCouter = 0;
@@ -14,12 +14,11 @@ function startgame () {
     document.getElementById("guesses-left").innerHTML = numGuesses;
     document.getElementById("wrong-guesses").innerHTML = wrongGuesses.join(" ");
 }
-function checkletter(letter){
-    var letterNeeded = false;
-    if (letterNeeded){
-        
+function checkletter(userChoice){
+    if (userChoice){
+
     } else {
-        wrongGuesses.push(letter);
+        wrongGuesses.push(userChoice);
         numGuesses--;
     }
 
@@ -35,7 +34,7 @@ function round(){
         startgame();
     } else (numGuesses === 0)
         lossCouter++;
-        // alert("Maybe Next Time?")
+        alert("Maybe Next Time?")
         document.getElementById("loss-counter").innnerHTML= lossCouter
         startgame();;
     }
